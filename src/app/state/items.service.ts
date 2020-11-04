@@ -18,10 +18,8 @@ export class ItemsService {
   }
 
   initReport() {
-    console.log('initReport');
     return this.dataService.getItems().pipe(
       tap(({ content, lastUpdated, someMetadata, someOtherData }) => {
-        console.log(someOtherData);
         this.itemsStore.update({ lastUpdated, someMetadata, someOtherData });
         this.itemsStore.add(content);
       })
