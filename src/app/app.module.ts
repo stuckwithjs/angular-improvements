@@ -6,6 +6,8 @@ import { ListComponent } from './list/list.component';
 import { RowComponent } from './row/row.component';
 import { ControlsComponent } from './controls/controls.component';
 import { ActionsComponent } from './controls/actions/actions.component';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { ActionsComponent } from './controls/actions/actions.component';
     ActionsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    environment.production ? [] : AkitaNgDevtools.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-performance-improvements"
+    }
+  },
+  "defaultProject": "angular-performance-improvements",
+  "cli": {
+    "defaultCollection": "@datorama/akita"
+  }
 }

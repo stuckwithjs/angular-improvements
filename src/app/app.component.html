@@ -1,6 +1,6 @@
 <div>
   <h1>Performance Issues</h1>
-  <h3>Currently selected filter: {{ currentFilter }}</h3>
+  <h3>Currently selected filter: {{ currentFilter$ | async }}</h3>
   <div>
     <button (click)="changeFilter('UNEDITED')">UNEDITED</button>
     <button (click)="changeFilter('ACCEPTED')">ACCEPTED</button>
@@ -10,8 +10,8 @@
     <button (click)="showControls = !showControls">Toggle Controls</button>
   </div>
   <app-list
-    [report]="filteredReport"
-    [currentFilter]="currentFilter"
+    [report]="categories$ | async"
+    [currentFilter]="currentFilter$ | async"
     [showControls]="showControls"
   ></app-list>
 </div>
