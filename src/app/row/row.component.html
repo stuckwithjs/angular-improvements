@@ -1,0 +1,31 @@
+<style>
+  .row {
+    display: flex;
+    align-items: center;
+    border: 1px solid green;
+    padding: 8px;
+  }
+
+  .controls {
+    margin-left: auto;
+  }
+</style>
+
+<div class="row">
+  <span *ngIf="type === 'entry'; else categoryRef"
+    >{{ element.id }}. {{ element.title }}</span
+  >
+  <ng-template #categoryRef>
+    <h2 *ngIf="type === 'subCategory'">
+      {{ element.id }}. {{ element.title }}
+    </h2>
+    <h1 *ngIf="type === 'category'">{{ element.id }}. {{ element.title }}</h1>
+  </ng-template>
+
+  <app-controls
+    *ngIf="showControls"
+    class="controls"
+    [currentFilter]="currentFilter"
+    [rowType]="type"
+  ></app-controls>
+</div>

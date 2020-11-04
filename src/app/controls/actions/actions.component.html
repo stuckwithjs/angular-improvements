@@ -1,0 +1,12 @@
+<style>
+  .control {
+    border: 1px solid blue;
+    padding: 4px;
+  }
+</style>
+
+<div class="control" *ngIf="type === 'UNEDITED'">to unedited</div>
+
+<div class="control" *ngIf="type === 'ACCEPTED'">to accepted</div>
+
+<div class="control" *ngIf="type === 'DECLINED'">to declined</div>

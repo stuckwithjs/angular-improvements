@@ -1,0 +1,28 @@
+<div *ngIf="rowType === 'entry'" class="controls">
+  <app-actions
+    *ngIf="currentFilter !== 'UNEDITED'"
+    type="UNEDITED"
+  ></app-actions>
+  <app-actions
+    *ngIf="currentFilter === 'UNEDITED' || currentFilter === 'ACCEPTED'"
+    type="DECLINED"
+  ></app-actions>
+  <app-actions
+    *ngIf="currentFilter === 'UNEDITED' || currentFilter === 'DECLINED'"
+    type="ACCEPTED"
+  ></app-actions>
+</div>
+
+<div
+  *ngIf="rowType !== 'entry' && currentFilter !== 'DECLINED'"
+  class="controls"
+>
+  <app-actions
+    *ngIf="currentFilter !== 'UNEDITED'"
+    type="UNEDITED"
+  ></app-actions>
+  <app-actions
+    *ngIf="currentFilter === 'UNEDITED'"
+    type="ACCEPTED"
+  ></app-actions>
+</div>

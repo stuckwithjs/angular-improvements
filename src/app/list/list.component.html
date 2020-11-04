@@ -1,0 +1,27 @@
+<div *ngFor="let category of report">
+  <app-row
+    [hidden]="!category.isVisible"
+    [element]="category"
+    [currentFilter]="currentFilter"
+    [showControls]="showControls"
+    type="category"
+  ></app-row>
+  <div *ngFor="let subCategory of category.entries">
+    <app-row
+      [hidden]="!subCategory.isVisible"
+      [element]="subCategory"
+      [currentFilter]="currentFilter"
+      [showControls]="showControls"
+      type="subCategory"
+    ></app-row>
+    <div *ngFor="let entry of subCategory.entries">
+      <app-row
+        [hidden]="!entry.isVisible"
+        [element]="entry"
+        [currentFilter]="currentFilter"
+        [showControls]="showControls"
+        type="entry"
+      ></app-row>
+    </div>
+  </div>
+</div>
